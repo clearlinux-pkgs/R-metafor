@@ -1,5 +1,5 @@
 PKG_NAME := R-metafor
-URL = https://cran.r-project.org/src/contrib/metafor_2.4-0.tar.gz
+URL = https://cran.r-project.org/src/contrib/metafor_3.0-1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
