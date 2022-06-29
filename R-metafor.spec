@@ -4,7 +4,7 @@
 #
 Name     : R-metafor
 Version  : 3.4.0
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/metafor_3.4-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/metafor_3.4-0.tar.gz
 Summary  : Meta-Analysis Package for R
