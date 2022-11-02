@@ -4,7 +4,7 @@
 #
 Name     : R-metafor
 Version  : 3.8.1
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/metafor_3.8-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/metafor_3.8-1.tar.gz
 Summary  : Meta-Analysis Package for R
