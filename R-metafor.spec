@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-metafor
-Version  : 4.0.0
-Release  : 13
-URL      : https://cran.r-project.org/src/contrib/metafor_4.0-0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/metafor_4.0-0.tar.gz
+Version  : 4.2.0
+Release  : 14
+URL      : https://cran.r-project.org/src/contrib/metafor_4.2-0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/metafor_4.2-0.tar.gz
 Summary  : Meta-Analysis Package for R
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -31,23 +31,25 @@ metafor: A Meta-Analysis Package for R
 [![R build status](https://github.com/wviechtb/metafor/workflows/R-CMD-check/badge.svg)](https://github.com/wviechtb/metafor/actions)
 [![Code Coverage](https://codecov.io/gh/wviechtb/metafor/branch/master/graph/badge.svg)](https://app.codecov.io/gh/wviechtb/metafor)
 [![CRAN Version](https://www.r-pkg.org/badges/version/metafor)](https://cran.r-project.org/package=metafor)
-[![devel Version](https://img.shields.io/badge/devel-4.1--0-brightgreen.svg)](https://www.metafor-project.org/doku.php/installation#development_version)
+[![devel Version](https://img.shields.io/badge/devel-4.3--0-brightgreen.svg)](https://www.metafor-project.org/doku.php/installation#development_version)
 [![Monthly Downloads](https://cranlogs.r-pkg.org/badges/metafor)](https://cranlogs.r-pkg.org/badges/metafor)
 [![Total Downloads](https://cranlogs.r-pkg.org/badges/grand-total/metafor)](https://cranlogs.r-pkg.org/badges/grand-total/metafor)
 
 %prep
 %setup -q -n metafor
-cd %{_builddir}/metafor
+pushd ..
+cp -a metafor buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679330791
+export SOURCE_DATE_EPOCH=1683562993
 
 %install
-export SOURCE_DATE_EPOCH=1679330791
+export SOURCE_DATE_EPOCH=1683562993
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -85,6 +87,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -117,6 +120,10 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/metafor/help/figures/ex_funnel_plot.png
 /usr/lib64/R/library/metafor/help/figures/forest-arrangement.pdf
 /usr/lib64/R/library/metafor/help/figures/forest-arrangement.png
+/usr/lib64/R/library/metafor/help/figures/plots-dark.pdf
+/usr/lib64/R/library/metafor/help/figures/plots-dark.png
+/usr/lib64/R/library/metafor/help/figures/plots-light.pdf
+/usr/lib64/R/library/metafor/help/figures/plots-light.png
 /usr/lib64/R/library/metafor/help/figures/selmodel-beta.pdf
 /usr/lib64/R/library/metafor/help/figures/selmodel-beta.png
 /usr/lib64/R/library/metafor/help/figures/selmodel-negexppow.pdf
