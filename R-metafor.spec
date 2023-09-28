@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-metafor
-Version  : 4.2.0
-Release  : 15
-URL      : https://cran.r-project.org/src/contrib/metafor_4.2-0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/metafor_4.2-0.tar.gz
+Version  : 4.4.0
+Release  : 16
+URL      : https://cran.r-project.org/src/contrib/metafor_4.4-0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/metafor_4.4-0.tar.gz
 Summary  : Meta-Analysis Package for R
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -31,7 +31,7 @@ metafor: A Meta-Analysis Package for R
 [![R build status](https://github.com/wviechtb/metafor/workflows/R-CMD-check/badge.svg)](https://github.com/wviechtb/metafor/actions)
 [![Code Coverage](https://codecov.io/gh/wviechtb/metafor/branch/master/graph/badge.svg)](https://app.codecov.io/gh/wviechtb/metafor)
 [![CRAN Version](https://www.r-pkg.org/badges/version/metafor)](https://cran.r-project.org/package=metafor)
-[![devel Version](https://img.shields.io/badge/devel-4.3--0-brightgreen.svg)](https://www.metafor-project.org/doku.php/installation#development_version)
+[![devel Version](https://img.shields.io/badge/devel-4.4--0-brightgreen.svg)](https://www.metafor-project.org/doku.php/installation#development_version)
 [![Monthly Downloads](https://cranlogs.r-pkg.org/badges/metafor)](https://cranlogs.r-pkg.org/badges/metafor)
 [![Total Downloads](https://cranlogs.r-pkg.org/badges/grand-total/metafor)](https://cranlogs.r-pkg.org/badges/grand-total/metafor)
 
@@ -46,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683562993
+export SOURCE_DATE_EPOCH=1695917944
 
 %install
-export SOURCE_DATE_EPOCH=1683562993
+export SOURCE_DATE_EPOCH=1695917944
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
